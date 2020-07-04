@@ -6,7 +6,7 @@ pipeline {
 	stages {
 	  stage("Docker build") {
 		steps{
-			sh "docker build -t mohankrish3/nginxkube:"${env.VERSION}""
+			sh '"docker build -t mohankrish3/nginxkube:"${env.VERSION}"'
 		}	
 	  }
 	  stage("Docker push") {
@@ -24,10 +24,10 @@ pipeline {
                 sh "scp -o StrictHostKeyChecking=no new-pods.yaml ubuntu@3.133.134.29:/home/ubuntu"
                 script{
                 	try {
-                		sh "ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl apply -f .""
+                		sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl apply -f ."'
                 	}
                 	catch (error){
-                	    sh "ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl create -f .""	
+                	    sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl create -f ."'	
                 	}
                 }
                 
