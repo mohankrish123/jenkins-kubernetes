@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: mohankrish3/nginx:tagVersion
+      image: mohankrish3/nginxkube:tagVersion
       ports:
         - containerPort: 8080
       #imagePullSecrets:
