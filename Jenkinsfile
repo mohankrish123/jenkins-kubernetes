@@ -25,12 +25,12 @@ pipeline {
                 script{
                         try {
                                 sh """
-                                      ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl apply -f ."
+                                      ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "sudo kubectl apply -f ."
                                 """
                         }
                         catch (error){
                             sh """
-                            ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "kubectl create -f ."
+                            ssh -o StrictHostKeyChecking=no ubuntu@3.133.134.29 "sudo kubectl create -f ."
                             """
                         }
                 }
