@@ -6,9 +6,7 @@ pipeline {
         stages {
           stage("Docker build") {
                 steps{
-                        sh """
-                               docker build -t mohankrish3/nginxkube:"${env.VERSION}" .
-                        """
+                        sh "docker build . -t mohankrish3/nginxkube:${VERSION}"
                 }
           }
           stage("Docker push") {
