@@ -7,7 +7,7 @@ pipeline {
           stage("Docker build") {
                 steps{
                         sh """
-                               docker build -t mohankrish3/nginxkube:"${env.VERSION}" -f Dockerfile
+                               docker build -t mohankrish3/nginxkube:"${env.VERSION}" .
                         """
                 }
           }
