@@ -9,7 +9,7 @@ spec:
   containers:
     - name: nginx
       image: mohankrish3/nginx:tagVersion
-      #      ports:
-      # - containerPort: 8080
-  imagePullSecrets:
-    - name: registry-secret
+      ports:
+        - containerPort: 8080
+      #imagePullSecrets:
+      # - name: registry-secret
