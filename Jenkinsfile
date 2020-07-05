@@ -6,14 +6,14 @@ pipeline {
         stages {
           stage("Docker build") {
                 steps{
-                        sh "docker build . -t mohankrish3/nginxkube:${VERSION}"
+                        sh "sudo docker build . -t mohankrish3/nginxkube:${VERSION}"
                 }
           }
           stage("Docker push") {
                         steps{
                                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKERHUBPASS', usernameVariable: 'DOCKERHUBUSER')]) {
-                sh "docker login -u $DOCKERHUBUSER -p $DOCKERHUBPASS"
-                sh "docker push mohankrish3/nginxkube:${env.VERSION}"
+                sh "sudo docker login -u $DOCKERHUBUSER -p $DOCKERHUBPASS"
+                sh "sudo docker push mohankrish3/nginxkube:${env.VERSION}"
                 }
                         }
           }
