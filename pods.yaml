@@ -11,3 +11,5 @@ spec:
       image: mohankrish3/nginx:tagVersion
       ports:
         - containerPort: 8080
+  imagePullSecrets:
+    - name: registry-secret
