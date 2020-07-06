@@ -10,6 +10,6 @@ spec:
     - name: nginx
       image: mohankrish3/nginxkube:tagVersion
       ports:
-        - containerPort: 8080
+        - containerPort: 80
       #imagePullSecrets:
       # - name: registry-secret
